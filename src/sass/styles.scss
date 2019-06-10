@@ -1,10 +1,26 @@
 $color: teal;
 
+body {
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+
 h1 {
   display: flex;
   justify-content: center;
   padding: 30px;
-  background-color: $color;
+  background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
   color: white;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
   text-align: center;
+}
+
+.main_body {
+  height: 60vh;
+  background: green;
+}
+.users_info {
+  margin-top: 50px;
 }
