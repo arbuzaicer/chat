@@ -5,16 +5,15 @@ body {
   margin: 0;
   background: black;
 }
-
-h1 {
-  display: flex;
-  justify-content: center;
-  padding: 30px;
+.header {
   background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
+}
+
+.header_name {
+  text-align: center;
   color: white;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 40px;
-  text-align: center;
+  font-size: 30px;
 }
 
 .main_body {
@@ -22,5 +21,5 @@ h1 {
   background: green;
 }
 .users_info {
-  margin-top: 50px;
+  padding-top: 50px;
 }
