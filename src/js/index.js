@@ -11,11 +11,15 @@ const o = {
 
 (function setDate() {
   let date = new Date();
-  let dateImport = document.querySelector('.current_date');
+  let dateImport = document.querySelector('.clock_container');
   let currentHour = date.getHours();
   let currentMinutes = date.getMinutes();
   let currentSeconds = date.getSeconds();
-  dateImport.innerHTML = currentHour+':ч '+currentMinutes+':м '+currentSeconds+':с';
+  let currentDate = date.getDay();
+  let currentMonth = date.getMonth();
+  let currentYear = date.getFullYear();
+
+  dateImport.innerHTML = 'Date: '+currentDate+' - '+currentMonth+' - '+currentYear+' '+'time: '+currentHour+':ч '+currentMinutes+':м '+currentSeconds+':с';
+  setTimeout(setDate, 1);
 }());
 
-console.log(o?.foo?.bar?.baz ?? 'default');
