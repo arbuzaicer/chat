@@ -1,61 +1,140 @@
 $color: teal;
+
+/*Main settings for all items*/
 body {
-  background: black;
-  }
-.header {
   background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
+  }
+.fa {
+  color: black;
 }
 
-.header_name {
+/*Header styles*/
+/*.header {
+  background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
+}*/
+.chat_name {
   text-align: center;
   color: white;
   font-family: 'Fredericka the Great', cursive;
+}
+.time_online {
+  color: white;
+  font-family: 'Fredericka the Great', cursive;
+}
+.chat_name h1 {
+  padding-left: 90px;
+  font-size: 100px;
+}
+.user_section {
+  margin-top: 35px;
+}
+#userAge, #userName {
+  font-family: 'Fredericka the Great', cursive;
+  color: white;
+}
+.currentDate {
   font-size: 30px;
+  color: rgba(255, 255, 255, 0.71);
+  font-family: 'Fredericka the Great', cursive;
+
 }
-.main_clock_box {
-  width: 163px;
-  border-radius: 8px;
-  height: 60px;
-  border: 2.5px solid black;
-}
-.clock_container {
-  background: white;
-  width: 158px;
-  height: 55px;
-  font-weight: 700;
+.current_timer {
+  display: inline-block;
+  width: 40px;
+  height: 70px;
   text-align: center;
-  border: 1px solid grey;
   border-radius: 5px;
+  font-weight: 600;
+  color: white;
+  font-size: 25px;
+  background: rgba(0, 0, 0, 0.26);
+  text-shadow: -2px 5px #0000007a;
+  line-height: 30px;
 }
+.current_timer:after {
+  display: block;
+  border-top: 1px solid white;
+  margin-top: 5px;
+  transform: translateX(15%);
+  border-radius: 1px;
+  width: 32px;
+  content: "";
+}
+.hour:after {
+  display: block;
+  content: "h";
+}
+.minutes:after {
+  display: block;
+  content: "m";
+}
+.seconds:after {
+  display: block;
+  content: "s";
+}
+.chat_info {
+  display: inline-block;
+}
+#my_favi {
+  width: 50px;
+  height: 50px;
+  transform: scale(1.5);
+  border-radius: 50%;
+}
+.user_section a {
+  text-decoration: none;
+}
+
+.current_date {
+  transition: 0.8s;
+}
+.fa-envelope {
+  color: white;
+}
+
+/*Styles for CONTENT section*/
 
 .main_body {
   height: 710px;
-  background: green;
 }
-
 .users_info {
   margin-top: 10px;
   text-align: center;
-  padding-top: 10px;
-  height: 650px;
+  padding-top: 3px;
+  height: 81vh;
   background: white;
   border-radius: 10px;
+  }
+.users_info a {
+  font-weight: 900;
+  color: #105631;
+  font-family: 'Fredericka the Great', cursive;
 }
-
 .users_info h6 {
   display: inline-block;
+  font-size: 20px;
+}
+.users_info:after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid darkgreen;
+}
+.switching_users {
+  background: #4f4f4f;
+  border-radius: 8px;
 }
 .messages {
+  position: relative;
   margin-top: 10px;
-  height: 650px;
+  height: 81vh;
   background: white;
   border-radius: 10px;
 }
-
 .switch_chat {
   margin: 10px 0 0 0;
   padding: 0;
   display: flex;
+  font-family: 'Fredericka the Great', cursive;
   justify-content: center;
   align-items: center;
 }
@@ -64,7 +143,70 @@ body {
   margin: 0 20px;
 }
 .switch_chat li a {
-  color: #b4b4b4;
+  color: white;
+  text-decoration: none;
   font-size: 1.5em;
   transition: 0.5s;
+}
+
+/*Message area*/
+.message_area {
+  position: absolute;
+  bottom: 7px;
+}
+.form-control  {
+  border-radius: 10px;
+  border: 2px solid rgb(55,188,37);
+}
+.btn-outline-secondary {
+  background-color: rgb(55,188,37);
+  width: 60px;
+}
+.fa-caret-square-o-right {
+  color: white;
+  transform: scale(1.8);
+}
+
+/*Message decoration area*/
+.text_decoration {
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  background: rgba(2, 2, 2, 0.23);
+  bottom: 0px;
+}
+.text_settings {
+  padding: 0;
+  margin: 0;
+  float: left;
+  display: flex;
+  font-family: 'Fredericka the Great', cursive;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+}
+.text_settings li {
+  list-style: none;
+  margin-right: 4px;
+}
+
+/*Hover effects*/
+
+a:hover {
+  color: white;
+}
+#userName:hover, #userAge:hover, .fa:hover, .switch_chat li a:hover {
+ color: #9a9a9a;
+}
+.users_info a:hover {
+  color: #084023;
+}
+.btn-outline-secondary:hover {
+  background-color: rgb(28, 111, 40);
+}
+.fa-caret-square-o-right:hover {
+  color: rgb(55,188,37);
+}
+.text_style:hover {
+  color: white;
 }

@@ -5,44 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>Webpack starter</title>
+    <title>Chat app by Max Pashynov</title>
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-
 <!--Section header. Contains: chat logo, current time, time users in chat, users settings, main info about msgs -->
 <section class="header element1">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 header_name">
-                <h1>Chat online</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 current_date">
+            <div class="col-md-2 current_date">
                 <div class="main_clock_box">
                     <div class="clock_container">
+                        <div class="currentDate">
+                        </div>
+                        <div class="currentTime">
+                            <div class="current_timer hour"></div>
+                            <div class="current_timer minutes"></div>
+                            <div class="current_timer seconds"></div>
+                        </div>
                     </div>
                 </div>
+                <div class="time_online">
+                    <p>Time on the site</p>
+                </div>
             </div>
-            <div class="col md-6 personal_settings">
-                <a href="#"><p>Name, Age, info</p></a>
+            <div class="col-md-7 chat_name">
+                <h1>Chat online</h1>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 time_online">
-                <p>Time on Site</p>
+            <div class="col-md-1 user_section" id="users_favicon">
+                <img id="my_favi" src="images/Me.jpg" alt="my favicon">
             </div>
-            <div class="col md-6 chat_info">
-                <a href="#">Msg's, read/notRead</a>
+            <div class="col-md-2 user_section">
+                <a href="#" id="userName"></a>
+                <a href="#" id="userAge"></a><br>
+                <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
 </section>
-
 <!--Main section. Contains: info about all users/online users, main body messages-->
 <section class="content">
     <div class="container">
@@ -54,21 +57,33 @@
              </div>
             <div class="col-md-10">
                 <div class="messages">
-
-                </div>
-                <div class="switching_users">
-                    <ul class="switch_chat">
-                        <li><a href="#">
-                            <i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#">
-                            <i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#">
-                            <i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#">
-                            <i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#">
-                            <i class="fa fa-instagram"></i></a></li>
-                    </ul>
+                    <div class="switching_users">
+                        <ul class="switch_chat">
+                            <li><a href="#">
+                                Chat1  <li>
+                            <li><a href="#">
+                                Chat2  <li>
+                            <li><a href="#">
+                                Chat3  <li>
+                            <li><a href="#">
+                                Chat4  <li>
+                            <li><a href="#">
+                                Chat5  <li>
+                        </ul>
+                    </div>
+                    <div class="input-group mb-3 message_area">
+                        <textarea class="form-control" placeholder="Recipient's username" aria-label="With textarea" aria-describedby="button-addon2"></textarea>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="text_decoration">
+                        <ul class="text_settings">
+                            <li><i class="fa fa-bold text_style" aria-hidden="true"></i><li>
+                            <li><i class="fa fa-italic text_style" aria-hidden="true"></i><li>
+                            <li><i class="fa fa-underline text_style" aria-hidden="true"></i><li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,23 +3,42 @@ import _ from 'lodash';
 
 import './../sass/styles.scss';
 
-const o = {
-  foo: {
-    bar: null
-  }
-};
+/*Setting users information*/
+(function setUserInfo() {
+    let userName = prompt('Hello. Please: Enter Your name');
+    let userAge = +prompt('Please: Enter Your age');
+    let name = userName;
+    let age = userAge;
+    let setName = document.querySelector('#userName');
+    let setAge = document.querySelector('#userAge');
+    setName.innerHTML = name+', ';
+    setAge.innerHTML = age;
+}());
 
+/*Creating a clock in the header section*/
 (function setDate() {
   let date = new Date();
-  let dateImport = document.querySelector('.clock_container');
+  let currentData = document.querySelector('.currentDate');
+  let setHours = document.querySelector('.hour');
+  let setMinutes = document.querySelector('.minutes');
+  let setSeconds = document.querySelector('.seconds');
   let currentHour = date.getHours();
   let currentMinutes = date.getMinutes();
   let currentSeconds = date.getSeconds();
-  let currentDate = date.getDay();
+  let currentDate = date.getDate();
   let currentMonth = date.getMonth();
   let currentYear = date.getFullYear();
+  let monthsName = ['January', 'February', 'May', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var monthName;
 
-  dateImport.innerHTML = 'Date: '+currentDate+' - '+currentMonth+' - '+currentYear+' '+'time: '+currentHour+':ч '+currentMinutes+':м '+currentSeconds+':с';
+  for(let i=0; i<monthsName.length; i++){
+    monthName=monthsName[currentMonth];
+  }
+  currentData.innerHTML = currentDate+' / '+monthName;
+  setHours.innerHTML = currentHour;
+  setMinutes.innerHTML = currentMinutes;
+  setSeconds.innerHTML = currentSeconds;
   setTimeout(setDate, 1);
 }());
+
 
