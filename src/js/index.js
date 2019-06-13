@@ -40,5 +40,3 @@ import './../sass/styles.scss';
   setSeconds.innerHTML = currentSeconds;
   setTimeout(setDate, 1);
 }());
-
-

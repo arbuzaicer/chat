@@ -13,7 +13,9 @@ body {
   background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
 }*/
 .chat_name {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-family: 'Fredericka the Great', cursive;
 }
@@ -210,3 +212,61 @@ a:hover {
 .text_style:hover {
   color: white;
 }
+
+/*Media requests*/
+@media (max-width: 1203px) {
+  .chat_name h1 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 992px) {
+  .chat_name h1 {
+    font-size: 55px;
+    padding: 0;
+  }
+  #my_favi {
+    width: 40px;
+    height: 40px;
+  }
+  .user_section {
+    margin-top: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
