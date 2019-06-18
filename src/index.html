@@ -6,6 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Chat app by Max Pashynov</title>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -16,7 +17,7 @@
 <section class="header element1">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-lg-2 current_date">
+            <div class="col-sm-4 col-md-3 col-lg-2 current_date">
                 <div class="main_clock_box">
                     <div class="clock_container">
                         <div class="currentDate">
@@ -32,13 +33,13 @@
                     <p>Time on the site</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-7 chat_name">
+            <div class="col-sm-4 col-md-6 col-lg-7 chat_name">
                 <h1>Chat online</h1>
             </div>
-            <div class="col-md-1 col-lg-1 user_section" id="users_favicon">
+            <div class="col-sm-1 col-md-1 col-lg-1 user_section" id="users_favicon">
                 <img id="my_favi" src="images/Me.jpg" alt="my favicon">
             </div>
-            <div class="col-md-2 col-lg-2 user_section">
+            <div class="col-sm-3 col-md-2 col-lg-2 user_section">
                 <a href="#" id="userName"></a>
                 <a href="#" id="userAge"></a><br>
                 <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
@@ -50,31 +51,31 @@
 <section class="content">
     <div class="container">
         <div class="row main_body">
-            <div class="col-md col-lg-2">
-                <div class="users_info element2">
-                    <a href="#"><h6>Users</h6></a>/<a href="#"><h6>Online</h6></a>
+            <div class="col-sm-12 col-md-2 col-lg-2">
+                <div class="users_info element2" id="users_online">
+                    <a href="#"><h6>Users</h6></a><span class="divide">/</span><a href="#"><h6>Online</h6></a>
                 </div>
              </div>
-            <div class="col-md col-lg-10">
+            <div class="col-md-12 col-lg-10">
                 <div class="messages">
                     <div class="switching_users">
                         <ul class="switch_chat">
                             <li><a href="#">
-                                Chat1  <li>
+                                Chat1<li>
                             <li><a href="#">
-                                Chat2  <li>
+                                Chat2<li>
                             <li><a href="#">
-                                Chat3  <li>
+                                Chat3<li>
                             <li><a href="#">
-                                Chat4  <li>
+                                Chat4<li>
                             <li><a href="#">
-                                Chat5  <li>
+                                Chat5<li>
                         </ul>
                     </div>
                     <div class="input-group mb-3 message_area">
                         <textarea class="form-control" placeholder="Enter your message here" id="message_section" aria-label="With textarea" aria-describedby="button-addon2"></textarea>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><p id="button_name">Send</p></button>
                         </div>
                     </div>
                     <div class="text_decoration">
@@ -89,5 +90,10 @@
         </div>
     </div>
 </section>
+
+<script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
 </body>
 </html>

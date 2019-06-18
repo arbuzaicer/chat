@@ -7,6 +7,16 @@ body {
 .fa {
   color: black;
 }
+.btn>p {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  -webkit-transform: rotate(335deg);
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+.btn {
+  padding: 0;
+}
 
 /*Header styles*/
 /*.header {
@@ -86,7 +96,9 @@ body {
 .user_section a {
   text-decoration: none;
 }
-
+.user_section {
+  text-align: center;
+}
 .current_date {
   transition: 0.8s;
 }
@@ -231,8 +243,47 @@ a:hover {
   .user_section {
     margin-top: 50px;
   }
+  .users_info {
+    height: 70px;
+    width: 400px;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    margin-bottom: 10px;
+    border: 1px solid #105631;
+  }
+  .users_info h6, .divide {
+    font-size: 10px;
+  }
+  .messages {
+    margin-bottom: 370px;
+    height: 400px;
+  }
 }
+@media (max-width: 770px) {
+  .header {
+    height: 120px;
+  }
+  .current_date {
+    transform: scale(0.5);
+  }
+  .currentTime {
+    display: inline-block;
+  }
+  .chat_name h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .time_online p{
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  .switch_chat li {
+    transform: scale(0.6);
+    margin: 0 8px;
+  }
 
+}
 
 
 
