@@ -6,11 +6,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Chat app by Max Pashynov</title>
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!--Section header. Contains: chat logo, current time, time users in chat, users settings, main info about msgs -->
@@ -42,7 +46,9 @@
             <div class="col-sm-3 col-md-2 col-lg-2 user_section">
                 <a href="#" id="userName"></a>
                 <a href="#" id="userAge"></a><br>
-                <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
+                <span class="msg_quantity">0</span>
+                </a>
             </div>
         </div>
     </div>
@@ -52,38 +58,120 @@
     <div class="container">
         <div class="row main_body">
             <div class="col-sm-12 col-md-2 col-lg-2">
-                <div class="users_info element2" id="users_online">
+<!--                <div class="users_info element2" id="users_online">
                     <a href="#"><h6>Users</h6></a><span class="divide">/</span><a href="#"><h6>Online</h6></a>
+                </div>-->
+                <div class="container mt-3 users_in_chat">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active users_online" href="#online">Online</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link users_online" href="#offline">Offline</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="online" class="container tab-pane active"><br>
+                            <div class="users_online_section">
+                                <div class="participants parteven">
+                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_user_1">
+                                    <a class="users_names" href="#">Anna</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                                <div class="participants partodd">
+                                    <img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
+                                    <a class="users_names" href="#">Nikolas</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                                <div class="participants parteven">
+                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_user_2">
+                                    <a class="users_names" href="#">Lisa</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                                <div class="participants partodd">
+                                    <img class="chat_users" src="images/users_default_man.png" alt="Man_user_2">
+                                    <a class="users_names" href="#">Sammy</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="offline" class="container tab-pane fade"><br>
+                            <div class="users_offine_section">
+                                <div class="participants parteven">
+                                    <img class="chat_users" src="images/users_default_man.png" alt="Man_useroff_1">
+                                    <a class="users_names" href="#">Charles</a>
+                                     <p class="offline_in_chat">Offline</p>
+                                </div>
+                                <div class="participants partodd">
+                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_useroff_1">
+                                    <a class="users_names" href="#">Christin</a>
+                                     <p class="offline_in_chat">Offline</p>
+                                </div>
+                                <div class="participants parteven">
+                                    <img class="chat_users" src="images/users_default_man.png" alt="Man_useroff_2">
+                                    <a class="users_names" href="#">Danny</a>
+                                     <p class="offline_in_chat">Offline</p>
+                                </div>
+                                <div class="participants partodd">
+                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_useroff_2">
+                                    <a class="users_names" href="#">Andra</a>
+                                     <p class="offline_in_chat">Offline</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
              </div>
+
             <div class="col-md-12 col-lg-10">
                 <div class="messages">
-                    <div class="switching_users">
-                        <ul class="switch_chat">
-                            <li><a href="#">
-                                Chat1<li>
-                            <li><a href="#">
-                                Chat2<li>
-                            <li><a href="#">
-                                Chat3<li>
-                            <li><a href="#">
-                                Chat4<li>
-                            <li><a href="#">
-                                Chat5<li>
-                        </ul>
+                    <!--Section with chat switcher.-->
+                <div class="container mt-3">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active msg_users" href="#chat1">John</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link msg_users" href="#chat2">Bobby</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link msg_users" href="#chat3">Kate</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="chat1" class="container tab-pane active"><br>
+                            <p>Some text 1.</p>
+                        </div>
+                        <div id="chat2" class="container tab-pane fade"><br>
+                            <p>Some text 2</p>
+                        </div>
+                        <div id="chat3" class="container tab-pane fade"><br>
+                            <p>Some text3</p>
+                        </div>
                     </div>
+                </div>
+                    <!--End chat switcher-->
                     <div class="input-group mb-3 message_area">
-                        <textarea class="form-control" placeholder="Enter your message here" id="message_section" aria-label="With textarea" aria-describedby="button-addon2"></textarea>
+                        <textarea class="form-control" placeholder="Enter your message" id="message_section" aria-label="With textarea" aria-describedby="button-addon2">
+                        </textarea>
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="button-addon2"><p id="button_name">Send</p></button>
                         </div>
-                    </div>
-                    <div class="text_decoration">
-                        <ul class="text_settings">
-                            <li><i class="fa fa-bold text_style" aria-hidden="true"></i><li>
-                            <li><i class="fa fa-italic text_style" aria-hidden="true"></i><li>
-                            <li><i class="fa fa-underline text_style" aria-hidden="true"></i><li>
-                        </ul>
+                        <div class="msg_info">
+                            <ul class="text_infos">
+                                <li class="text_info">Symbols</li>
+                                <li class="text_info">Letters</li>
+                                <li class="text_info">Invisible</li>
+                                <li class="text_info">Signs</li>
+                            </ul>
+                        </div>
+                        <div class="text_decoration">
+                            <ul class="text_settings">
+                                <li><i class="fa fa-bold text_style" title="Bold" aria-hidden="true"></i><li>
+                                <li><i class="fa fa-italic text_style" title="Italic" aria-hidden="true"></i><li>
+                                <li><i class="fa fa-underline text_style" title="Underline" aria-hidden="true"></i><li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,9 +179,14 @@
     </div>
 </section>
 
-<script
-        src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+        });
+    });
+</script>
+
 </body>
 </html>

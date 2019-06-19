@@ -1,15 +1,20 @@
+/*Colors for chat*/
 $color: teal;
+$color_body:  -webkit-linear-gradient(left, rgb(221,208,237) 0%,rgb(193,208,225) 22%,rgb(221,208,237) 78%,rgb(193,208,225) 100%);
+$green_theme: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
+$blue_theme: -webkit-linear-gradient(left, rgb(89,151,172) 0%, rgb(126, 157, 175) 22%,rgb(161,203,221) 78%,rgb(89,151,172) 100%);
+$letters: #eeede7;
 
 /*Main settings for all items*/
 body {
-  background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
+  background: $blue_theme;
   }
 .fa {
-  color: black;
+  color: rgba(0, 0, 0, 0.49);
 }
 .btn>p {
   font-family: 'Kaushan Script', cursive;
-  color: white;
+  color: $letters;
   -webkit-transform: rotate(335deg);
   letter-spacing: 3px;
   margin-top: 10px;
@@ -17,7 +22,9 @@ body {
 .btn {
   padding: 0;
 }
-
+#button-addon2 {
+  border-bottom-right-radius: 10px;
+}
 /*Header styles*/
 /*.header {
   background: -webkit-linear-gradient(left, rgb(55,188,37) 0%,rgb(16,86,49) 22%,rgb(16,86,49) 78%,rgb(55,188,37) 100%);
@@ -26,11 +33,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: $letters;
   font-family: 'Fredericka the Great', cursive;
 }
 .time_online {
-  color: white;
+  color: $letters;
+  margin-top: 10px;
   font-family: 'Fredericka the Great', cursive;
 }
 .chat_name h1 {
@@ -39,14 +47,16 @@ body {
 }
 .user_section {
   margin-top: 35px;
+
 }
 #userAge, #userName {
   font-family: 'Fredericka the Great', cursive;
   color: white;
+  font-size: 25px;
 }
 .currentDate {
   font-size: 30px;
-  color: rgba(255, 255, 255, 0.71);
+  color: $letters;
   font-family: 'Fredericka the Great', cursive;
 
 }
@@ -57,7 +67,7 @@ body {
   text-align: center;
   border-radius: 5px;
   font-weight: 600;
-  color: white;
+  color: $letters;
   font-size: 25px;
   background: rgba(0, 0, 0, 0.26);
   text-shadow: -2px 5px #0000007a;
@@ -96,14 +106,23 @@ body {
 .user_section a {
   text-decoration: none;
 }
-.user_section {
-  text-align: center;
-}
 .current_date {
   transition: 0.8s;
 }
 .fa-envelope {
-  color: white;
+  color: $letters;
+  transform: scale(1.8);
+  position: absolute;
+  margin-top: 10px;
+}
+.msg_quantity {
+  position: relative;
+  font-weight: 800;
+  display: block;
+  top: 0;
+  color: red;
+  margin-left: 23px;
+  margin-top: -5px;
 }
 
 /*Styles for CONTENT section*/
@@ -115,13 +134,13 @@ body {
   margin-top: 10px;
   text-align: center;
   padding-top: 3px;
-  height: 81vh;
+  height: 75vh;
   background: white;
   border-radius: 10px;
   }
 .users_info a {
   font-weight: 900;
-  color: #105631;
+  color: rgb(76, 107, 152);
   font-family: 'Fredericka the Great', cursive;
 }
 .users_info h6 {
@@ -131,7 +150,7 @@ body {
 .users_info:after {
   content: "";
   display: block;
-  border-bottom: 3px solid darkgreen;
+  border-bottom: 3px solid rgb(89,151,172);
 }
 .switching_users {
   background: #4f4f4f;
@@ -140,7 +159,7 @@ body {
 .messages {
   position: relative;
   margin-top: 10px;
-  height: 81vh;
+  height: 75vh;
   background: white;
   border-radius: 10px;
 }
@@ -157,37 +176,94 @@ body {
   margin: 0 20px;
 }
 .switch_chat li a {
-  color: white;
+  color: $letters;
   text-decoration: none;
   font-size: 1.5em;
   transition: 0.5s;
+}
+/*Online/offline users section*/
+.users_in_chat {
+  height: 75vh;
+  background: white;
+  border-radius: 10px;
+  padding: 0;
+}
+.users_online {
+  width: 80px;
+  font-size: 14px;
+  padding: 10px 0;
+  text-align: center;
+  color:  #5b99ae;
+  font-weight: 800;
+}
+.chat_users {
+  width: 40px;
+  height: 40px;
+}
+.users_names {
+  font-family: 'Fredericka the Great', cursive;
+  color:  #5b99ae;
+  font-weight: 800;
+  margin-left: 10px;
+}
+.participants {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.online_in_chat {
+  color: #00b100;
+  text-align: center;
+}
+.offline_in_chat {
+  color: orange;
+  text-align: center;
+}
+.parteven {
+  background: rgba(0, 0, 0, 0.05);
+}
+.partodd {
+  background: rgba(0, 0, 0, 0.16);
 }
 
 /*Message area*/
 .message_area {
   position: absolute;
-  bottom: 7px;
+  bottom: -16px;
+  height: 100px;
 }
 .form-control  {
   border-radius: 10px;
-  border: 2px solid rgb(55,188,37);
+  border: 1px solid black;
 }
 .btn-outline-secondary {
-  background-color: rgb(55,188,37);
+  background-color: black;
   width: 60px;
 }
 .fa-caret-square-o-right {
-  color: white;
+  color: $letters;
   transform: scale(1.8);
+}
+.nav-tabs {
+  font-family: 'Fredericka the Great', cursive;
+  color: rgb(76, 107, 152);
+}
+.nav-tabs .nav-link.active {
+  background: #5a97ac;
+  color: white;
+}
+.msg_users {
+  color: #5a97ac;
+  font-weight: 800;
 }
 
 /*Message decoration area*/
 .text_decoration {
-  width: 100%;
+  width: 93.5%;
   border-radius: 10px;
   position: absolute;
-  background: rgba(2, 2, 2, 0.23);
-  bottom: 0px;
+  background: #5b98abab;
+  bottom: 0;
+  z-index: 9999;
 }
 .text_settings {
   padding: 0;
@@ -202,33 +278,54 @@ body {
 .text_settings li {
   list-style: none;
   margin-right: 4px;
+  }
+.msg_info {
+  width: 90%;
+  bottom: 25px;
+  position: absolute;
+  text-align: right;
+ }
+.text_info {
+  float: left;
+  display: flex;
+  font-size: 10px;
 }
-
+.text_infos li {
+  margin-right: 10px;
+}
 /*Hover effects*/
 
 a:hover {
-  color: white;
+  color: $letters;
 }
 #userName:hover, #userAge:hover, .fa:hover, .switch_chat li a:hover {
  color: #9a9a9a;
 }
+.users_online:hover {
+  color: #315163;
+}
 .users_info a:hover {
-  color: #084023;
+  color: grey;
 }
 .btn-outline-secondary:hover {
-  background-color: rgb(28, 111, 40);
-}
-.fa-caret-square-o-right:hover {
-  color: rgb(55,188,37);
+  background-color: rgb(89,151,172);
 }
 .text_style:hover {
-  color: white;
+  color: $letters;
+}
+.msg_users:hover {
+  color: rgb(55, 90, 110);
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /*Media requests*/
 @media (max-width: 1203px) {
   .chat_name h1 {
     font-size: 80px;
+  }
+  .text_decoration {
+    width: 92.5%;
   }
 }
 @media (max-width: 992px) {
@@ -250,7 +347,7 @@ a:hover {
     z-index: 999;
     bottom: 0;
     margin-bottom: 10px;
-    border: 1px solid #105631;
+    border: 1px solid rgb(89,151,172);
   }
   .users_info h6, .divide {
     font-size: 10px;
@@ -258,6 +355,9 @@ a:hover {
   .messages {
     margin-bottom: 370px;
     height: 400px;
+  }
+  .text_decoration {
+    width: 91.5%;
   }
 }
 @media (max-width: 770px) {
@@ -282,7 +382,9 @@ a:hover {
     transform: scale(0.6);
     margin: 0 8px;
   }
-
+  .text_decoration {
+    width: 88.5%;
+  }
 }
 
 
