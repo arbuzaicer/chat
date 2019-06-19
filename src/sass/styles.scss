@@ -47,7 +47,6 @@ body {
 }
 .user_section {
   margin-top: 35px;
-
 }
 #userAge, #userName {
   font-family: 'Fredericka the Great', cursive;
@@ -130,56 +129,13 @@ body {
 .main_body {
   height: 710px;
 }
-.users_info {
-  margin-top: 10px;
-  text-align: center;
-  padding-top: 3px;
-  height: 75vh;
-  background: white;
-  border-radius: 10px;
-  }
-.users_info a {
-  font-weight: 900;
-  color: rgb(76, 107, 152);
-  font-family: 'Fredericka the Great', cursive;
-}
-.users_info h6 {
-  display: inline-block;
-  font-size: 20px;
-}
-.users_info:after {
-  content: "";
-  display: block;
-  border-bottom: 3px solid rgb(89,151,172);
-}
-.switching_users {
-  background: #4f4f4f;
-  border-radius: 8px;
-}
+
 .messages {
   position: relative;
   margin-top: 10px;
   height: 75vh;
   background: white;
   border-radius: 10px;
-}
-.switch_chat {
-  margin: 10px 0 0 0;
-  padding: 0;
-  display: flex;
-  font-family: 'Fredericka the Great', cursive;
-  justify-content: center;
-  align-items: center;
-}
-.switch_chat li {
-  list-style: none;
-  margin: 0 20px;
-}
-.switch_chat li a {
-  color: $letters;
-  text-decoration: none;
-  font-size: 1.5em;
-  transition: 0.5s;
 }
 /*Online/offline users section*/
 .users_in_chat {
@@ -189,7 +145,7 @@ body {
   padding: 0;
 }
 .users_online {
-  width: 80px;
+  width: 75px;
   font-size: 14px;
   padding: 10px 0;
   text-align: center;
@@ -199,7 +155,7 @@ body {
 .chat_users {
   width: 40px;
   height: 40px;
-}
+  }
 .users_names {
   font-family: 'Fredericka the Great', cursive;
   color:  #5b99ae;
@@ -261,7 +217,7 @@ body {
   width: 93.5%;
   border-radius: 10px;
   position: absolute;
-  background: #5b98abab;
+  background: rgba(142, 216, 236, 0.67);
   bottom: 0;
   z-index: 9999;
 }
@@ -285,6 +241,14 @@ body {
   position: absolute;
   text-align: right;
  }
+.text_style {
+  margin-left: 5px;
+  color: black;
+}
+.text_data {
+  margin-left: 10px;
+  font-size: 12px;
+}
 .text_info {
   float: left;
   display: flex;
@@ -304,19 +268,22 @@ a:hover {
 .users_online:hover {
   color: #315163;
 }
-.users_info a:hover {
-  color: grey;
-}
 .btn-outline-secondary:hover {
   background-color: rgb(89,151,172);
-}
-.text_style:hover {
-  color: $letters;
 }
 .msg_users:hover {
   color: rgb(55, 90, 110);
   font-weight: 800;
   background: rgba(0, 0, 0, 0.2);
+}
+.text_style:hover {
+  color: white;
+}
+.text_decoration:hover {
+  background: #315163;
+}
+.users_names:hover {
+  color: #315163;
 }
 
 /*Media requests*/
@@ -326,6 +293,16 @@ a:hover {
   }
   .text_decoration {
     width: 92.5%;
+  }
+  .users_online {
+    width: 65px;
+  }
+  .chat_users {
+    width: 30px;
+    height: 30px;
+  }
+  .users_names {
+    font-size: 12px;
   }
 }
 @media (max-width: 992px) {
@@ -340,24 +317,27 @@ a:hover {
   .user_section {
     margin-top: 50px;
   }
-  .users_info {
-    height: 70px;
-    width: 400px;
-    position: fixed;
-    z-index: 999;
-    bottom: 0;
-    margin-bottom: 10px;
-    border: 1px solid rgb(89,151,172);
-  }
-  .users_info h6, .divide {
-    font-size: 10px;
-  }
   .messages {
     margin-bottom: 370px;
     height: 400px;
+    width: 100%;
   }
   .text_decoration {
     width: 91.5%;
+  }
+  .users_in_chat {
+    position: absolute;
+    top: 410px;
+    width: 96%;
+    height: 150px;
+  }
+  .users_online {
+    width: 70px;
+  }
+  .participants {
+    width: 20%;
+    display: inline-block;
+    margin-left: 25px;
   }
 }
 @media (max-width: 770px) {
@@ -384,6 +364,9 @@ a:hover {
   }
   .text_decoration {
     width: 88.5%;
+  }
+  .participants {
+    margin-left: 15px;
   }
 }
 
