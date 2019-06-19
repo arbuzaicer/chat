@@ -5,8 +5,6 @@ import './../sass/styles.scss';
 
 /*Setting users information*/
 (function setUserInfo() {
-    let userName = prompt('Hello. Please: Enter Your name');
-    let userAge = +prompt('Please: Enter Your age');
     let name = userName;
     let age = userAge;
     let setName = document.querySelector('#userName');

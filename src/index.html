@@ -17,6 +17,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<script>
+    let userName = prompt('Hello. Please: Enter Your name');
+    let userAge = +prompt('Please: Enter Your age');
+</script>
 <!--Section header. Contains: chat logo, current time, time users in chat, users settings, main info about msgs -->
 <section class="header element1">
     <div class="container">
@@ -40,15 +44,13 @@
             <div class="col-sm-4 col-md-6 col-lg-7 chat_name">
                 <h1>Chat online</h1>
             </div>
-            <div class="col-sm-1 col-md-1 col-lg-1 user_section" id="users_favicon">
-                <img id="my_favi" src="images/Me.jpg" alt="my favicon">
-            </div>
-            <div class="col-sm-3 col-md-2 col-lg-2 user_section">
-                <a href="#" id="userName"></a>
-                <a href="#" id="userAge"></a><br>
-                <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
-                <span class="msg_quantity">0</span>
-                </a>
+            <div class="col-sm-4 col-md-3 col-lg-3 user_section">
+                         <img id="my_favi" src="images/Me.jpg" alt="my favicon">
+                        <a href="#" id="userName"></a>
+                        <a href="#" id="userAge"></a><br>
+                        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span class="msg_quantity">0</span>
+                        </a>
             </div>
         </div>
     </div>
@@ -62,10 +64,10 @@
                 <div class="container mt-3 users_in_chat">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active users_online" href="#online">Online</a>
+                            <a class="nav-link active users_online" href="#online">Online<br>(4)</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link users_online" href="#offline">Offline</a>
+                            <a class="nav-link users_online" href="#contacts">Contacts<br>(7)</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -96,27 +98,42 @@
                         </div>
                         <!--End online section-->
                         <!--Users offline section-->
-                        <div id="offline" class="container tab-pane fade"><br>
-                            <div class="users_offine_section">
+                        <div id="contacts" class="container tab-pane fade"><br>
+                            <div class="users_contacts_section">
+                                <div class="participants parteven">
+                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_user_1">
+                                    <a class="users_names" href="#">Anna</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                                <div class="participants partodd">
+                                    <img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
+                                    <a class="users_names" href="#">Nikolas</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                                <div class="participants parteven">
+                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_user_2">
+                                    <a class="users_names" href="#">Lisa</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
+                                <div class="participants partodd">
+                                    <img class="chat_users" src="images/users_default_man.png" alt="Man_user_2">
+                                    <a class="users_names" href="#">Sammy</a>
+                                    <p class="online_in_chat">Online</p>
+                                </div>
                                 <div class="participants parteven">
                                     <img class="chat_users" src="images/users_default_man.png" alt="Man_useroff_1">
                                     <a class="users_names" href="#">Charles</a>
-                                     <p class="offline_in_chat">Offline</p>
+                                     <p class="contacts_in_chat">Offline</p>
                                 </div>
                                 <div class="participants partodd">
                                     <img class="chat_users" src="images/users_default_women.png" alt="Women_useroff_1">
                                     <a class="users_names" href="#">Christin</a>
-                                     <p class="offline_in_chat">Offline</p>
+                                     <p class="contacts_in_chat">Offline</p>
                                 </div>
                                 <div class="participants parteven">
                                     <img class="chat_users" src="images/users_default_man.png" alt="Man_useroff_2">
                                     <a class="users_names" href="#">Danny</a>
-                                     <p class="offline_in_chat">Offline</p>
-                                </div>
-                                <div class="participants partodd">
-                                    <img class="chat_users" src="images/users_default_women.png" alt="Women_useroff_2">
-                                    <a class="users_names" href="#">Andra</a>
-                                     <p class="offline_in_chat">Offline</p>
+                                     <p class="contacts_in_chat">Offline</p>
                                 </div>
                             </div>
                         </div>
@@ -129,8 +146,8 @@
             <div class="col-md-12 col-lg-10">
                 <div class="messages">
                     <!--Section with chat switcher.-->
-                <div class="container mt-3">
-                    <ul class="nav nav-tabs">
+                <div class="container mt-3 area_messages">
+                    <ul class="nav nav-tabs users_length">
                         <li class="nav-item">
                             <a class="nav-link active msg_users" href="#chat1">John</a>
                         </li>
@@ -143,8 +160,38 @@
                     </ul>
                     <div class="tab-content">
                         <div id="chat1" class="container tab-pane active"><br>
-                            <p>Some text 1.</p>
+                            <div class="dialog">
+                                <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
+                                    Friend message
+                                    <span class="msg_time">9:25</span></p>
+                            </div>
+                            <div class="dialog">
+                                <p class="your_text">My message
+                                    <span class="msg_time">9:28</span>
+                                    <img class="your_logo" src="images/Me.jpg" alt="My_logo_msg"></p>
+                            </div>
+                            <div class="dialog">
+                                <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
+                                    Friend message
+                                    <span class="msg_time">9:30</span></p>
+                            </div>
+                            <div class="dialog">
+                                <p class="your_text">My message
+                                    <span class="msg_time">9:35</span>
+                                    <img class="your_logo" src="images/Me.jpg" alt="My_logo_msg"></p>
+                            </div>
+                            <div class="dialog">
+                                <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
+                                    Friend message
+                                    <span class="msg_time">9:38</span></p>
+                            </div>
+                            <div class="dialog">
+                                <p class="your_text">My message
+                                    <span class="msg_time">9:52</span>
+                                    <img class="your_logo" src="images/Me.jpg" alt="My_logo_msg"></p>
+                            </div>
                         </div>
+
                         <div id="chat2" class="container tab-pane fade"><br>
                             <p>Some text 2</p>
                         </div>
@@ -154,30 +201,28 @@
                     </div>
                 </div>
                     <!--End chat switcher-->
-                    <!--Section with textarea messages, text decoration and messages information-->
-                    <div class="input-group mb-3 message_area">
-                        <textarea class="form-control" placeholder="Enter message" id="message_section" aria-label="With textarea" aria-describedby="button-addon2"></textarea>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><p id="button_name">Send</p></button>
-                        </div>
-                        <div class="msg_info">
-                            <div>
-                                <span class="text_data">Symbols</span>
-                                <span class="text_data">Letters</span>
-                                <span class="text_data">Invisible</span>
-                                <span class="text_data">Signs</span>
-                            </div>
-                        </div>
-                        <div class="text_decoration">
-                            <ul class="text_settings">
-                                <li><i class="fa fa-bold text_style" title="Bold" aria-hidden="true"></i><li>
-                                <li><i class="fa fa-italic text_style" title="Italic" aria-hidden="true"></i><li>
-                                <li><i class="fa fa-underline text_style" title="Underline" aria-hidden="true"></i><li>
-                            </ul>
+                </div>
+                <!--Section with textarea messages, text decoration and messages information-->
+                <div class="input-group mb-3 message_area">
+                    <textarea class="form-control" placeholder="Enter message" id="message_section" aria-label="With textarea" aria-describedby="button-addon2"></textarea>
+                    <div class="msg_info">
+                        <div>
+                            <span class="text_data">Symbols</span>
+                            <span class="text_data">Letters</span>
+                            <span class="text_data">Invisible</span>
+                            <span class="text_data">Signs</span>
                         </div>
                     </div>
-                    <!--End textarea section-->
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                        <div class="text_decoration">
+                            <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-bold text_style" title="Bold" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-italic text_style" title="Italic" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-underline text_style" title="Underline" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
+                <!--End textarea section-->
             </div>
         </div>
     </div>
@@ -190,6 +235,5 @@
         });
     });
 </script>
-
 </body>
 </html>

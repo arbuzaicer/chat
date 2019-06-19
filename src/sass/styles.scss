@@ -12,13 +12,6 @@ body {
 .fa {
   color: rgba(0, 0, 0, 0.49);
 }
-.btn>p {
-  font-family: 'Kaushan Script', cursive;
-  color: $letters;
-  -webkit-transform: rotate(335deg);
-  letter-spacing: 3px;
-  margin-top: 10px;
-}
 .btn {
   padding: 0;
 }
@@ -47,7 +40,8 @@ body {
 }
 .user_section {
   margin-top: 35px;
-}
+  text-align: right;
+ }
 #userAge, #userName {
   font-family: 'Fredericka the Great', cursive;
   color: white;
@@ -99,12 +93,13 @@ body {
 #my_favi {
   width: 50px;
   height: 50px;
-  transform: scale(1.5);
+  transform: translateX(-50%) scale(1.5);
   border-radius: 50%;
+
 }
 .user_section a {
   text-decoration: none;
-}
+  }
 .current_date {
   transition: 0.8s;
 }
@@ -113,6 +108,7 @@ body {
   transform: scale(1.8);
   position: absolute;
   margin-top: 10px;
+  right: 20px;
 }
 .msg_quantity {
   position: relative;
@@ -120,7 +116,7 @@ body {
   display: block;
   top: 0;
   color: red;
-  margin-left: 23px;
+  margin-left: 255px;
   margin-top: -5px;
 }
 
@@ -133,20 +129,22 @@ body {
 .messages {
   position: relative;
   margin-top: 10px;
-  height: 75vh;
+  height: 400px;
   background: white;
   border-radius: 10px;
+  overflow: auto;
 }
-/*Online/offline users section*/
+/*Online/contacts users section*/
 .users_in_chat {
-  height: 75vh;
+  height: 500px;
   background: white;
   border-radius: 10px;
   padding: 0;
+  overflow: auto;
 }
 .users_online {
-  width: 75px;
-  font-size: 14px;
+  width: 70px;
+  font-size: 12px;
   padding: 10px 0;
   text-align: center;
   color:  #5b99ae;
@@ -170,7 +168,7 @@ body {
   color: #00b100;
   text-align: center;
 }
-.offline_in_chat {
+.contacts_in_chat {
   color: orange;
   text-align: center;
 }
@@ -184,20 +182,18 @@ body {
 /*Message area*/
 .message_area {
   position: absolute;
-  bottom: -16px;
   height: 100px;
+  margin-top: 10px;
+  width: 97%;
 }
 .form-control  {
   border-radius: 10px;
   border: 1px solid black;
+  z-index: 0;
 }
 .btn-outline-secondary {
-  background-color: black;
+  background-color: #315163;
   width: 60px;
-}
-.fa-caret-square-o-right {
-  color: $letters;
-  transform: scale(1.8);
 }
 .nav-tabs {
   font-family: 'Fredericka the Great', cursive;
@@ -213,33 +209,29 @@ body {
 }
 
 /*Message decoration area*/
+.btn-secondary {
+  width: 35px;
+}
 .text_decoration {
-  width: 93.5%;
-  border-radius: 10px;
   position: absolute;
-  background: rgba(142, 216, 236, 0.67);
-  bottom: 0;
+  display: block;
+  bottom: 2px;
+  left: 10px;
   z-index: 9999;
 }
-.text_settings {
-  padding: 0;
-  margin: 0;
-  float: left;
-  display: flex;
-  font-family: 'Fredericka the Great', cursive;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0.8);
+.btn-info {
+  width: 25px;
 }
-.text_settings li {
-  list-style: none;
-  margin-right: 4px;
-  }
+.fa-paper-plane-o {
+  color: #5aaefb;
+  transform: scale(1.4);
+}
 .msg_info {
   width: 90%;
-  bottom: 25px;
+  bottom: 2px;
   position: absolute;
   text-align: right;
+  z-index: 9999;
  }
 .text_style {
   margin-left: 5px;
@@ -257,6 +249,26 @@ body {
 .text_infos li {
   margin-right: 10px;
 }
+.friend_text {
+  background: rgba(78, 135, 156, 0.3);
+  padding: 5px;
+  border-radius: 10px;
+}
+.your_text {
+  background: #b1d58e;
+  border-radius: 10px;
+  text-align: right;
+  }
+.msg_time {
+  font-size: 10px;
+  text-align: right;
+}
+.your_logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 /*Hover effects*/
 
 a:hover {
@@ -269,7 +281,7 @@ a:hover {
   color: #315163;
 }
 .btn-outline-secondary:hover {
-  background-color: rgb(89,151,172);
+  background-color: #1a2534;
 }
 .msg_users:hover {
   color: rgb(55, 90, 110);
@@ -278,9 +290,6 @@ a:hover {
 }
 .text_style:hover {
   color: white;
-}
-.text_decoration:hover {
-  background: #315163;
 }
 .users_names:hover {
   color: #315163;
@@ -304,7 +313,11 @@ a:hover {
   .users_names {
     font-size: 12px;
   }
+  .msg_quantity {
+    margin-left: 210px;
+  }
 }
+
 @media (max-width: 992px) {
   .chat_name h1 {
     font-size: 55px;
@@ -322,14 +335,18 @@ a:hover {
     height: 400px;
     width: 100%;
   }
+  .message_area {
+    top: 410px;
+    width: 96%;
+  }
   .text_decoration {
     width: 91.5%;
   }
   .users_in_chat {
     position: absolute;
-    top: 410px;
     width: 96%;
     height: 150px;
+    bottom: -700px;
   }
   .users_online {
     width: 70px;
@@ -338,6 +355,9 @@ a:hover {
     width: 20%;
     display: inline-block;
     margin-left: 25px;
+  }
+  .msg_quantity {
+    margin-left: 150px;
   }
 }
 @media (max-width: 770px) {
@@ -367,6 +387,18 @@ a:hover {
   }
   .participants {
     margin-left: 15px;
+  }
+  .msg_quantity {
+    margin-left: 150px;
+  }
+  .users_in_chat {
+    width: 95%;
+  }
+  .message_area {
+    width: 95%;
+  }
+  #userAge, #userName {
+    font-size: 20px;
   }
 }
 
