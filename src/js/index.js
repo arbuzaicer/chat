@@ -3,15 +3,39 @@ import _ from 'lodash';
 
 import './../sass/styles.scss';
 
+/*Modal*/
+
+var modalOut = document.querySelector(".modal_window");
+var bodyChat = document.querySelector('.main_boby_chat');
+var signButton = document.querySelector("#sign_in");
+var signOutButton = document.querySelector("#signOut");
+
+signButton.onclick = function () {
+    bodyChat.style.display = "block";
+    modalOut.style.display = "none";
+    var name1 = document.querySelector('#userName_1');
+
+    (function setUserInfo() {
+        let name = name1.value;
+        let setName = document.querySelector('#userName');
+        setName.innerHTML = name;
+    }());
+
+};
+
+/*Running main body chat*/
+
+signOutButton.onclick = function () {
+    bodyChat.style.display = "none";
+    modalOut.style.display = "block";
+};
+
+/*Creating chat users*/
+
+
+
 /*Setting users information*/
-(function setUserInfo() {
-    let name = userName;
-    let age = userAge;
-    let setName = document.querySelector('#userName');
-    let setAge = document.querySelector('#userAge');
-    setName.innerHTML = name+', ';
-    setAge.innerHTML = age;
-}());
+
 
 /*Creating a clock in the header section*/
 (function setDate() {
@@ -32,9 +56,11 @@ import './../sass/styles.scss';
   for(let i=0; i<monthsName.length; i++){
     monthName=monthsName[currentMonth];
   }
+
   currentData.innerHTML = currentDate+' / '+monthName;
   setHours.innerHTML = currentHour;
   setMinutes.innerHTML = currentMinutes;
   setSeconds.innerHTML = currentSeconds;
+
   setTimeout(setDate, 1);
 }());
