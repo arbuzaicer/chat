@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Chat app by Max Pashynov</title>
-    <link href="https://fonts.googleapis.git pullcom/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3 sign_register_buttons">
                 <button type="button" id="sign_in" class="btn btn-success modal_buttons">Sign in</button>
-                <button type="button" id="register" class="btn btn-primary modal_buttons" onClick='location.href="https://studentschat.herokuapp.com/users/register"'>Register</button>
+                <button type="button" id="register_button" class="btn btn-primary modal_buttons">Register</button>
             </div>
         </div>
     </div>
@@ -93,11 +93,11 @@
 
                 <!--Section online/offline users-->
 
-                <div class="col-sm-12 col-md-12 col-lg-2">
+                <div class="col-sm-12 col-md-12 col-lg-3">
                     <div class="container mt-3 users_in_chat">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active users_online" href="#contacts">Contacts<br>(7)</a>
+                                <a class="nav-link active users_online" href="#contacts">Contacts<br>(<span id="total_users">7</span>)</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -106,41 +106,7 @@
 
                             <div id="contacts" class="container tab-pane active"><br>
                                 <div class="users_contacts_section">
-                                    <div class="participants parteven">
-                                        <img class="chat_users" src="images/users_default_women.png" alt="Women_user_1">
-                                        <a class="users_names" href="#">Anna</a>
-                                        <p class="online_in_chat">Online</p>
-                                    </div>
-                                    <div class="participants partodd">
-                                        <img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
-                                        <a class="users_names" href="#">Nikolas</a>
-                                        <p class="online_in_chat">Online</p>
-                                    </div>
-                                    <div class="participants parteven">
-                                        <img class="chat_users" src="images/users_default_women.png" alt="Women_user_2">
-                                        <a class="users_names" href="#">Lisa</a>
-                                        <p class="online_in_chat">Online</p>
-                                    </div>
-                                    <div class="participants partodd">
-                                        <img class="chat_users" src="images/users_default_man.png" alt="Man_user_2">
-                                        <a class="users_names" href="#">Sammy</a>
-                                        <p class="online_in_chat">Online</p>
-                                    </div>
-                                    <div class="participants parteven">
-                                        <img class="chat_users" src="images/users_default_man.png" alt="Man_useroff_1">
-                                        <a class="users_names" href="#">Charles</a>
-                                        <p class="contacts_in_chat">Offline</p>
-                                    </div>
-                                    <div class="participants partodd">
-                                        <img class="chat_users" src="images/users_default_women.png" alt="Women_useroff_1">
-                                        <a class="users_names" href="#">Christin</a>
-                                        <p class="contacts_in_chat">Offline</p>
-                                    </div>
-                                    <div class="participants parteven">
-                                        <img class="chat_users" src="images/users_default_man.png" alt="Man_useroff_2">
-                                        <a class="users_names" href="#">Danny</a>
-                                        <p class="contacts_in_chat">Offline</p>
-                                    </div>
+
                                 </div>
                             </div>
 
@@ -154,7 +120,7 @@
 
                 <!--Main messages section-->
 
-                <div class="col-md-12 col-lg-10">
+                <div class="col-md-12 col-lg-9">
                     <div class="messages">
 
                         <!--Section with chat switcher.-->
@@ -231,7 +197,7 @@
                             </div>
                         </div>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                            <button class="btn btn-outline-secondary send_message" type="button" id="button-addon2"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                             <div class="text_decoration">
                                 <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-bold text_style" title="Bold" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-italic text_style" title="Italic" aria-hidden="true"></i></button>
@@ -244,6 +210,7 @@
 
                 </div>
             </div>
+            <p id="test"></p>
         </div>
     </section>
 
@@ -256,6 +223,7 @@
             });
         });
     </script>
+
 </section>
 
 </body>
