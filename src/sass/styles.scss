@@ -143,18 +143,21 @@ body {
 .main_body {
   height: 710px;
 }
-
+.area_messages {
+  overflow: scroll;
+  height: 350px;
+  padding-bottom: 10px;
+}
 .messages {
   position: relative;
   margin-top: 10px;
   height: 400px;
   background: white;
   border-radius: 10px;
-  overflow: auto;
 }
 /*Online/contacts users section*/
 .users_in_chat {
-  height: 500px;
+  height: 560px;
   background: white;
   border-radius: 10px;
   padding: 0;
@@ -200,7 +203,7 @@ body {
 /*Message area*/
 .message_area {
   position: absolute;
-  height: 100px;
+  height: 150px;
   margin-top: 10px;
   width: 97%;
 }
@@ -280,6 +283,18 @@ body {
 .msg_time {
   font-size: 10px;
   text-align: right;
+}
+.dialog {
+  width: 95%;
+  height: 70px;
+  margin-left: 40px;
+}
+.dialog>p {
+  position: relative;
+}
+.dialog>p>img {
+  position: absolute;
+  left: -50px;
 }
 .your_logo {
   width: 40px;

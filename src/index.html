@@ -31,6 +31,8 @@
             <div class="col-md-6 offset-md-3">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="userName_1" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" aria-label="Username" aria-describedby="basic-addon1">
+
                 </div>
             </div>
         </div>
@@ -121,11 +123,11 @@
                 <!--Main messages section-->
 
                 <div class="col-md-12 col-lg-9">
-                    <div class="messages">
+                    <div class="messages" >
 
                         <!--Section with chat switcher.-->
 
-                        <div class="container mt-3 area_messages">
+                        <div class="container mt-3">
                             <ul class="nav nav-tabs users_length">
                                 <li class="nav-item">
                                     <a class="nav-link active msg_users" href="#chat1">John</a>
@@ -138,7 +140,7 @@
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div id="chat1" class="container tab-pane active"><br>
+                                <div id="chat1" class="container area_messages tab-pane active"><br>
                                     <div class="dialog">
                                         <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
                                             Friend's message
@@ -171,11 +173,10 @@
                                     </div>
                                 </div>
 
-                                <div id="chat2" class="container tab-pane fade"><br>
+                                <div id="chat2" class="container area_messages tab-pane fade"><br>
                                     <p>Some text 2</p>
                                 </div>
-                                <div id="chat3" class="container tab-pane fade"><br>
-                                    <p>Some text3</p>
+                                <div id="chat3" class="container area_messages tab-pane fade"><br>
                                 </div>
                             </div>
                         </div>
@@ -190,10 +191,10 @@
                         <textarea class="form-control" placeholder="Enter message" id="message_section" aria-label="With textarea" aria-describedby="button-addon2" style="resize: none;"></textarea>
                         <div class="msg_info">
                             <div>
-                                <span class="text_data">Symbols</span>
-                                <span class="text_data">Letters</span>
-                                <span class="text_data">Invisible</span>
-                                <span class="text_data">Signs</span>
+                                <span class="text_data Symbols">Symbols</span>
+                                <span class="text_data" id="letters">Letters</span>
+                                <span class="text_data" id="invisible">Backspaces</span>
+                                <span class="text_data" id="signs">Signs</span>
                             </div>
                         </div>
                         <div class="input-group-append">
@@ -214,12 +215,14 @@
         </div>
     </section>
 
+
 <!--Custom scripts section-->
 
     <script>
         $(document).ready(function(){
             $(".nav-tabs a").click(function(){
                 $(this).tab('show');
+                $(this).scrollTop(1000000);
             });
         });
     </script>
