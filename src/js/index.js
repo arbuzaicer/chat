@@ -45,6 +45,21 @@ function GetUsersArray(users_url) {
 
 var usersArray = JSON.parse(GetUsersArray("https://studentschat.herokuapp.com/users/"));
 
+/*Sorting users for status parameter*/
+
+function sorting(a, b) {
+    if(a["status"] > b["status"]) {
+        return 1;
+    } else {
+        return -1;
+    }
+
+}
+
+/*Creating a status sorted array*/
+
+var sortStatusUsers = usersArray.sort(sorting);
+
 /*Function that set my ID*/
 
 function getMyId() {
@@ -122,13 +137,19 @@ signButton.onclick = function () {
 
             }
 
-            for(let i = 0; i < userList.length; i++) {
+            for(let i = 0; i < sortStatusUsers.length; i++) {
                 let currentUser = document.createElement("div");
                 let linkImage = document.createElement("IMG");
                 let linkUser = document.createElement("a");
-                currentUser.className = "participants partodd";
+
+                if(i%2===0) {
+                    currentUser.className = "participants parteven";
+                } if(i%2!==0) {
+                    currentUser.className = "participants partodd";
+                }
+
                 /*Creating users using DOM*/
-                if(userList[i].username===name1.value) {
+                if(sortStatusUsers[i].username===name1.value) {
                     continue;
                 }
                 /*Creating a participants block*/
@@ -137,7 +158,7 @@ signButton.onclick = function () {
 
                 /*Creating a user Image*/
 
-                let userName = document.createTextNode(userList[i].username);
+                let userName = document.createTextNode(sortStatusUsers[i].username);
                 linkImage.className = "chat_users";
                 linkImage.setAttribute("src", "http://clipart-library.com/images/dc45n8yzi.png");
                 linkImage.setAttribute("alt", "Man_user"+i);
@@ -146,7 +167,7 @@ signButton.onclick = function () {
                 /*Creating a link with user Name block*/
 
                 linkUser.className = "users_names";
-                linkUser.title = userList[i].username;
+                linkUser.title = sortStatusUsers[i].username;
                 linkUser.href = "#";
                 linkUser.appendChild(userName);
                 currentUser.appendChild(linkUser);
@@ -154,15 +175,15 @@ signButton.onclick = function () {
                 /*Creating a user Status block*/
 
                 let userStatus = document.createElement("p");
-                let statusName = document.createTextNode(userList[i].status);
+                let statusName = document.createTextNode(sortStatusUsers[i].status);
 
-                if(userList[i].status==="active") {
+                if(sortStatusUsers[i].status==="active") {
                     userStatus.className = "online_in_chat chat_status";
                     userStatus.appendChild(statusName);
                     currentUser.appendChild(userStatus);
                 }
 
-                if(userList[i].status==="inactive") {
+                if(sortStatusUsers[i].status==="inactive") {
                     userStatus.className = "contacts_in_chat chat_status";
                     userStatus.appendChild(statusName);
                     currentUser.appendChild(userStatus);
@@ -172,7 +193,7 @@ signButton.onclick = function () {
 
             /*End cycle*/
 
-            totalUsers.innerHTML = userList.length;
+            totalUsers.innerHTML = sortStatusUsers.length;
 
         } else {
             // Обработчик ответа в случае ошибки
@@ -208,18 +229,18 @@ signButton.onclick = function () {
 
         var getMessages = totalMsg.responseText;
         var messagesData = JSON.parse(getMessages);
-        var total_msg, user_info, dialog, msgData, textInfo, userFirstName,  msgDateHour, msgMinutes, msgTime, currentTime;
+        var total_msg, user_info, dialog, msgData, textInfo, userFirstName,  msgDateHour, msgMinutes, msgTime, currentTime,
+        currentDate;
 
 
         for(let i = 0; i < messagesData.length; i++){
-
+            currentDate = document.createElement("div");
             total_msg = document.createElement("div");
             total_msg.className = "total_msg";
             user_info = document.createElement("div");
             user_info.className = "user_info msgs";
             dialog = document.createElement("div");
             dialog.className = "dialog msgs";
-
             let linkImage = document.createElement("IMG");
 
             if(messagesData[i].user_id == getMyId()) {
