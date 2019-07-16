@@ -130,7 +130,7 @@
                         <div class="container mt-3">
                             <ul class="nav nav-tabs users_length">
                                 <li class="nav-item">
-                                    <a class="nav-link active msg_users" href="#chat1">John</a>
+                                    <a class="nav-link active msg_users" href="#chat1"><span id="chatroom"></span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link msg_users" href="#chat2">Bobby</a>
@@ -139,42 +139,10 @@
                                     <a class="nav-link msg_users" href="#chat3">Kate</a>
                                 </li>
                             </ul>
-                            <div class="tab-content">
+                            <div class="tab-content" id="somthi">
                                 <div id="chat1" class="container area_messages tab-pane active"><br>
-                                    <div class="dialog">
-                                        <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
-                                            Friend's message
-                                            <span class="msg_time">9:25</span></p>
-                                    </div>
-                                    <div class="dialog">
-                                        <p class="your_text">My message
-                                            <span class="msg_time">9:28</span>
-                                            <img class="your_logo" src="images/Me.jpg" alt="My_logo_msg"></p>
-                                    </div>
-                                    <div class="dialog">
-                                        <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
-                                            Friend's message
-                                            <span class="msg_time">9:30</span></p>
-                                    </div>
-                                    <div class="dialog">
-                                        <p class="your_text">My message
-                                            <span class="msg_time">9:35</span>
-                                            <img class="your_logo" src="images/Me.jpg" alt="My_logo_msg"></p>
-                                    </div>
-                                    <div class="dialog">
-                                        <p class="friend_text"><img class="chat_users" src="images/users_default_man.png" alt="Man_user_1">
-                                            Friend's message
-                                            <span class="msg_time">9:38</span></p>
-                                    </div>
-                                    <div class="dialog">
-                                        <p class="your_text">My message
-                                            <span class="msg_time">9:52</span>
-                                            <img class="your_logo" src="images/Me.jpg" alt="My_logo_msg"></p>
-                                    </div>
                                 </div>
-
                                 <div id="chat2" class="container area_messages tab-pane fade"><br>
-                                    <p>Some text 2</p>
                                 </div>
                                 <div id="chat3" class="container area_messages tab-pane fade"><br>
                                 </div>
@@ -189,20 +157,31 @@
 
                     <div class="input-group mb-3 message_area">
                         <textarea class="form-control" placeholder="Enter message" id="message_section" aria-label="With textarea" aria-describedby="button-addon2" style="resize: none;"></textarea>
-                        <div class="msg_info">
-                            <div>
-                                <span class="text_data Symbols">Symbols</span>
-                                <span class="text_data" id="letters">Letters</span>
-                                <span class="text_data" id="invisible">Backspaces</span>
-                                <span class="text_data" id="signs">Signs</span>
-                            </div>
-                        </div>
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary send_message" type="button" id="button-addon2"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                             <div class="text_decoration">
                                 <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-bold text_style" title="Bold" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-italic text_style" title="Italic" aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-secondary btn-sm text_settings"><i class="fa fa-underline text_style" title="Underline" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msg_info">
+                        <div>
+                            <div class="text_parametrs">
+                                <span>Symbols:   </span><p class="text_data Symbols">Symbols</p>
+                            </div>
+
+                            <div class="text_parametrs">
+                                <span>Letters:   </span><p class="text_data" id="letters">Letters</p>
+                            </div>
+
+                            <div class="text_parametrs">
+                                <span>Backspaces:   </span><p class="text_data" id="invisible">Backspaces</p>
+                            </div>
+
+                            <div class="text_parametrs">
+                                <span>Signs:   </span><p class="text_data" id="signs">Signs</p>
                             </div>
                         </div>
                     </div>
@@ -222,12 +201,12 @@
         $(document).ready(function(){
             $(".nav-tabs a").click(function(){
                 $(this).tab('show');
-                $(this).scrollTop(1000000);
             });
         });
     </script>
 
 </section>
+
 
 </body>
 </html>
