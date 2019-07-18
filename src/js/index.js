@@ -235,6 +235,7 @@ signButton.onclick = function () {
 
         for(let i = 0; i < messagesData.length; i++){
             currentDate = document.createElement("div");
+            currentDate.className="dataMessages";
             total_msg = document.createElement("div");
             total_msg.className = "total_msg";
             user_info = document.createElement("div");
@@ -279,26 +280,30 @@ signButton.onclick = function () {
             msgData = document.createElement("p");
             textInfo = messagesData[i].message;
 
-            msgData.appendChild(msgTime);
-            msgData.innerHTML = textInfo;
+            if(messagesData[i]["datetime"]) {
+                msgData.appendChild(msgTime);
+                msgData.innerHTML = textInfo;
 
-            user_info.appendChild(linkImage);
-            user_info.appendChild(userName);
-            dialog.appendChild(msgData);
-            msgData.appendChild(msgTime);
+                user_info.appendChild(linkImage);
+                user_info.appendChild(userName);
+                dialog.appendChild(msgData);
+                msgData.appendChild(msgTime);
 
-            chatRoom.innerHTML = messagesData[i].chatroom_id;
+                chatRoom.innerHTML = messagesData[i].chatroom_id;
 
-            if(messagesData[i].user_id == getMyId()) {
-                msgData.className = "your_text";
-                total_msg.appendChild(dialog);
-                total_msg.appendChild(user_info);
-                usersMsg.appendChild(total_msg);
-            } else {
-                msgData.className = "friend_text";
-                total_msg.appendChild(user_info);
-                total_msg.appendChild(dialog);
-                usersMsg.appendChild(total_msg);
+                if(messagesData[i].user_id == getMyId()) {
+                    msgData.className = "your_text";
+                    total_msg.appendChild(dialog);
+                    total_msg.appendChild(user_info);
+                    currentDate.appendChild(total_msg);
+                    usersMsg.appendChild(currentDate);
+                } else {
+                    msgData.className = "friend_text";
+                    total_msg.appendChild(user_info);
+                    total_msg.appendChild(dialog);
+                    currentDate.appendChild(total_msg);
+                    usersMsg.appendChild(currentDate);
+                }
             }
 
         }
@@ -410,7 +415,6 @@ sendMessage.onclick = function () {
   let currentSeconds = date.getSeconds();
   let currentDate = date.getDate();
   let currentMonth = date.getMonth();
-  let currentYear = date.getFullYear();
   let monthsName = ['January', 'February', 'May', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var monthName;
 
@@ -426,4 +430,27 @@ sendMessage.onclick = function () {
   setTimeout(setDate, 1);
 }());
 
+
+(function setTimeOnTheSite() {
+
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    setInterval(setTime, 1000);
+
+    function setTime() {
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+    }
+}())
 

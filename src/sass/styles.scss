@@ -105,6 +105,11 @@ body {
   display: block;
   content: "s";
 }
+#time_spent {
+  background:transparent;
+  border: none;
+  color: white;
+}
 .chat_info {
   display: inline-block;
 }
